@@ -6,5 +6,5 @@ services:
 before_install:
   - docker build -t shivam/deploy-with-docker -f Dockerfile.dev .
 
-scripts:
+script:
   - docker run -e CI=true shivam/deploy-with-docker  npm run test -- --coverage
