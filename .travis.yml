@@ -1,0 +1,9 @@
+sudo : required
+services:
+  - docker
+
+before_install:
+  -docker build -t shivam/deploy-with-docker -f Dockerfile.dev .
+
+scripts:
+  -docker run shivam/deploy-with-docker  npm run test -- --coverage
